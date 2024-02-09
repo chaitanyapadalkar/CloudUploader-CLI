@@ -36,7 +36,7 @@ check_file_exists(){
 
 check_storageaccount_exists(){
     if ! az storage account show --name "$1" &>/dev/null; then
-        echo "Storage Account $1 does not exist"
+        echo "Storage Account "$1" does not exist"
         exit 1
     fi
 }
@@ -67,13 +67,13 @@ upload_file(){
 
 
 FILE_PATH="$1"
-STORAGE_ACCOUNT="$2"
-CONTAINER="$3"
 
 setup
 check_path_exists "$FILE_PATH"
 check_file_exists "$FILE_PATH"
-check_storageaccount_exists "$STORAGE_ACCOUNT"
-check_container_exists "$STORAGE_ACCOUNT" "$CONTAINER"
-upload_file "$FILE_PATH" "$STORAGE_ACCOUNT" "$CONTAINER"
+read -p "Enter Storage Account name: " storage_account;
+check_storageaccount_exists "$storage_account"
+read -p "Enter Container name: " container;
+check_container_exists "$storage_account" "$container"
+upload_file "$FILE_PATH" "$storage_account" "$container"
 
