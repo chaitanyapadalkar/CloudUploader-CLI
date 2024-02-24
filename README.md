@@ -4,6 +4,11 @@
 
 CloudUploader CLI is a Bash-based command-line tool designed to simplify the process of uploading files to Azure Blob Storage. Whether you're a developer managing large datasets or a business handling customer files, this tool streamlines the upload process and enhances productivity.
 
+## Blog Post
+
+Check out my detailed blog post on Hashnode to learn more about the CloudUploader CLI project and my journey with Linux and Bash Scripting:
+[Link to Blog Post](https://chaitanyapadalkar.hashnode.dev/capstone-project-building-a-bash-based-cli-tool-for-uploading-files-to-azure-blob-storage)
+
 ## Features
 
 - **Authentication**: Authenticate with your Azure account using Azure CLI.
